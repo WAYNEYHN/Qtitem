@@ -31,3 +31,36 @@
    ​			请下载并安装  LAVFilters：https://github.com/Nevcairiel/LAVFilters/releases解决
 
 这是一个智能音箱的学校实训项目，通过调用百度智能语音和图灵机器人的API实现以下功能由于是在windows平台进行开发，所以没有使用snowboy实现智能唤醒，所以通过比较取巧的语音识别+字符串对比实现
+
+# 开发中的问题
+
+1. 网络请求发送报错如下
+
+   ```
+   qt.network.ssl: QSslSocket: cannot call unresolved function SSLv23_client_method
+   ```
+
+   解决方案：将G:\QT-opensource\Tools\mingw530_32\opt\bin目录下的 **libeay32.dll和ssleay32dll** copy到项目.exe同级目录下或者放到Qt的bin目录下
+
+2. 在播放语音合成模块语音的时候出现
+
+   ```
+    DirectShowPlayerService::doRender: Unresolved error code 0x80040266
+   ```
+
+   解决方案：下载并安装  LAVFilters：https://github.com/Nevcairiel/LAVFilters/releases解决
+
+3. 录音时出现错误：未报错，经上网查询是录音设备不支持设置的格式
+       进行了一个相近格式的转换
+
+4. 设置录音时间时出错
+
+   ​        QTimer，QEventloop在一起实现一个定时关闭录音的系统
+
+5. 使用QMediaPlay类播放Wav文件时出现如下问题
+
+   ```
+   DirectShowPlayerService::doSetUrlSource: Unresolved error code 0x80040216 ()
+   ```
+
+   解决方案：创建QSound对象以播放
