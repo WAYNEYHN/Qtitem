@@ -1,0 +1,16 @@
+INPUT(
+./release/main.o
+./release/widget.o
+./release/audio.o
+./release/gettoken.o
+./release/speech2text.o
+./release/text2speech.o
+./release/robot.o
+./release/qrc_resource.o
+./release/moc_widget.o
+./release/moc_audio.o
+./release/moc_gettoken.o
+./release/moc_speech2text.o
+./release/moc_text2speech.o
+./release/moc_robot.o
+);

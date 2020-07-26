@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ding.wav</file>
+        <file>dong.wav</file>
+    </qresource>
+</RCC>
